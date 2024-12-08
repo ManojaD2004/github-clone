@@ -26,7 +26,6 @@ var server = http.createServer(function (req, res) {
       ? req.pipe(zlib.createGunzip())
       : req;
   // console.log(reqStream)
-
   reqStream
     .pipe(
       backend(req.url, function (err, service) {
